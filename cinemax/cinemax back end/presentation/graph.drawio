@@ -1,0 +1,239 @@
+<mxfile host="65bd71144e">
+    <diagram name="MCD" id="mcd_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0m"/>
+                <mxCell id="1m" parent="0m"/>
+                <mxCell id="legend_mcd" value="&lt;b&gt;Légende &amp; Explications (MCD) :&lt;/b&gt;&lt;br&gt;&lt;br&gt;&#10;- &lt;b&gt;Entités (Jaune) :&lt;/b&gt; Objets gérés par le système.&lt;br&gt;&#10;- &lt;b&gt;Relations (Cyan) :&lt;/b&gt; Associations logiques.&lt;br&gt;&#10;- &lt;b&gt;Cardinalités :&lt;/b&gt; Règles de gestion (ex: 0,n)." style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=10;fillColor=#2D2D2D;strokeColor=#666666;fontColor=#FFFFFF;" parent="1m" vertex="1">
+                    <mxGeometry x="880" y="20" width="300" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ent_user" value="User" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="40" y="200" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="at_u1" value="id (PK)&#10;username&#10;email&#10;password&#10;role&#10;created_at" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontColor=#000000;" parent="ent_user" vertex="1">
+                    <mxGeometry y="26" width="180" height="154" as="geometry"/>
+                </mxCell>
+                <mxCell id="ent_mov" value="Movie" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="450" y="200" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="at_m1" value="id (PK)&#10;title&#10;genre&#10;duration&#10;price&#10;showtime&#10;availableSeats" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontColor=#000000;" parent="ent_mov" vertex="1">
+                    <mxGeometry y="26" width="200" height="154" as="geometry"/>
+                </mxCell>
+                <mxCell id="ent_res" value="Reservation" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="500" y="20" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="at_r1" value="id (PK)&#10;seats_booked&#10;total_price&#10;created_at" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontColor=#000000;" parent="ent_res" vertex="1">
+                    <mxGeometry y="26" width="180" height="74" as="geometry"/>
+                </mxCell>
+                <mxCell id="ent_com" value="Comment" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="60" y="570" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="at_c1" value="id (PK)&#10;content&#10;rating&#10;created_at" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontColor=#000000;" parent="ent_com" vertex="1">
+                    <mxGeometry y="26" width="180" height="74" as="geometry"/>
+                </mxCell>
+                <mxCell id="ent_msg" value="ContactMessage" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="450" y="550" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="at_msg1" value="id (PK)&#10;email&#10;subject&#10;message" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontColor=#000000;" parent="ent_msg" vertex="1">
+                    <mxGeometry y="26" width="180" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_book" value="Réserver" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="300" y="100" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_concern" value="Concerne" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="710" y="60" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_write" value="Rédiger" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="100" y="440" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_review" value="Porte sur" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="300" y="480" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_manage" value="Gérer (Admin)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" parent="1m" vertex="1">
+                    <mxGeometry x="300" y="270" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_send" value="Envoyer" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" vertex="1" parent="1m">
+                    <mxGeometry x="300" y="560" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <!-- Edges with Arrows added as requested -->
+                <mxCell id="l1" value="0,n" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="ent_user" target="rel_book" edge="1"/>
+                <mxCell id="l2" value="1,1" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="rel_book" target="ent_res" edge="1"/>
+                <mxCell id="l3" value="1,1" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="ent_res" target="rel_concern" edge="1"/>
+                <mxCell id="l4" value="0,n" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="rel_concern" target="ent_mov" edge="1"/>
+                <mxCell id="l5" value="0,n" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="ent_user" target="rel_manage" edge="1"/>
+                <mxCell id="l6" value="0,1" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="rel_manage" target="ent_mov" edge="1"/>
+                <mxCell id="l7" value="0,n" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="ent_user" target="rel_write" edge="1"/>
+                <mxCell id="l8" value="1,1" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="rel_write" target="ent_com" edge="1"/>
+                <mxCell id="l9" value="1,1" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="ent_com" target="rel_review" edge="1"/>
+                <mxCell id="l10" value="0,n" style="endArrow=classic;html=1;fontColor=#000000;" parent="1m" source="rel_review" target="ent_mov" edge="1"/>
+                <mxCell id="l11" value="0,n (Opt)" style="endArrow=classic;html=1;fontColor=#000000;" edge="1" parent="1m" source="ent_user" target="rel_send"/>
+                <mxCell id="l12" value="1,1" style="endArrow=classic;html=1;fontColor=#000000;" edge="1" parent="1m" source="rel_send" target="ent_msg"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Use Case Diagram" id="use_case_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0u"/>
+                <mxCell id="1u" parent="0u"/>
+                <mxCell id="legend_uc" value="&lt;b&gt;Légende Use Case :&lt;/b&gt;&lt;br&gt;&lt;br&gt;- &lt;b&gt;Acteurs :&lt;/b&gt; Visitor, User, Admin.&lt;br&gt;- &lt;b&gt;Liaisons :&lt;/b&gt; Qui peut faire quoi.&lt;br&gt;..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1u" vertex="1">
+                    <mxGeometry x="640" y="40" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="u1" value="Visitor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1u" vertex="1">
+                    <mxGeometry x="60" y="100" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="u2" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1u" vertex="1">
+                    <mxGeometry x="60" y="320" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="u3" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1u" vertex="1">
+                    <mxGeometry x="60" y="600" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="inh1" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1u" source="u2" target="u1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inh2" value="" style="endArrow=block;endSize=16;endFill=0;html=1;" parent="1u" source="u3" target="u2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="sys" value="Cinemax System" style="swimlane;whiteSpace=wrap;html=1;" parent="1u" vertex="1">
+                    <mxGeometry x="180" y="20" width="440" height="750" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_search" value="Rechercher" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="40" y="40" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_view" value="Voir Catalogue" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="240" y="40" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_signup" value="S'inscrire" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="40" y="120" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_login" value="Se Connecter" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="240" y="120" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_book" value="Réserver Séance" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="140" y="250" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_pay" value="Payer" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="280" y="310" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_comment" value="Commenter" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+                    <mxGeometry x="140" y="380" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_contact" value="Contacter Support" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys">
+                    <mxGeometry x="40" y="450" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_admin" value="Gérer Films" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="sys" vertex="1">
+                    <mxGeometry x="140" y="550" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="l_inc" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="sys" source="c_book" target="c_pay" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="l_ext" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="sys" source="c_search" target="c_view" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="l_v_1" style="endArrow=none;html=1;" parent="1u" source="u1" target="c_search" edge="1"/>
+                <mxCell id="l_v_2" style="endArrow=none;html=1;" parent="1u" source="u1" target="c_view" edge="1"/>
+                <mxCell id="l_v_3" style="endArrow=none;html=1;" parent="1u" source="u1" target="c_signup" edge="1"/>
+                <mxCell id="l_v_4" style="endArrow=none;html=1;" parent="1u" source="u1" target="c_login" edge="1"/>
+                <mxCell id="l_v_5" style="endArrow=none;html=1;" edge="1" parent="1u" source="u1" target="c_contact"/>
+                <mxCell id="l_u_1" style="endArrow=none;html=1;" parent="1u" source="u2" target="c_book" edge="1"/>
+                <mxCell id="l_u_2" style="endArrow=none;html=1;" parent="1u" source="u2" target="c_comment" edge="1"/>
+                <mxCell id="l_a_1" style="endArrow=none;html=1;" parent="1u" source="u3" target="c_admin" edge="1"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Navigation Diagram" id="navigation_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0n"/>
+                <mxCell id="1n" parent="0n"/>
+                <mxCell id="nav_legend" value="&lt;b&gt;Navigation&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;" parent="1n" vertex="1">
+                    <mxGeometry x="640" y="40" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="home" value="Home" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#001414;" parent="1n" vertex="1">
+                    <mxGeometry x="340" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="login" value="Connexion" style="rounded=1;whiteSpace=wrap;html=1;" parent="1n" vertex="1">
+                    <mxGeometry x="140" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="catalog" value="Catalogue" style="rounded=1;whiteSpace=wrap;html=1;" parent="1n" vertex="1">
+                    <mxGeometry x="340" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="details" value="Détails" style="rounded=1;whiteSpace=wrap;html=1;" parent="1n" vertex="1">
+                    <mxGeometry x="340" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="booking" value="Réservation" style="rounded=1;whiteSpace=wrap;html=1;" parent="1n" vertex="1">
+                    <mxGeometry x="340" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1n" source="home" target="login" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1n" source="home" target="catalog" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1n" source="catalog" target="details" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" parent="1n" source="details" target="booking" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Class Diagram" id="class_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0c"/>
+                <mxCell id="1c" parent="0c"/>
+                <mxCell id="legend_class" value="&lt;b&gt;UML Classes&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;" vertex="1" parent="1c">
+                    <mxGeometry x="640" y="40" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_User" value="User" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;html=1;" parent="1c" vertex="1">
+                    <mxGeometry x="40" y="100" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_att_u1" value="- id: Long&#10;- username: String&#10;..." style="text;whiteSpace=wrap;" parent="c_User" vertex="1">
+                    <mxGeometry y="26" width="200" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_Movie" value="Movie" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;html=1;" parent="1c" vertex="1">
+                    <mxGeometry x="300" y="100" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_att_m1" value="- id: Long&#10;- title: String&#10;..." style="text;whiteSpace=wrap;" parent="c_Movie" vertex="1">
+                    <mxGeometry y="26" width="200" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_Msg" value="ContactMessage" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;html=1;" parent="1c" vertex="1">
+                    <mxGeometry x="40" y="300" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="c_att_msg" value="- id: Long&#10;- user: User (opt)" style="text;whiteSpace=wrap;" parent="c_Msg" vertex="1">
+                    <mxGeometry y="26" width="200" height="74" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_msg_u" style="edgeStyle=none;html=1;endArrow=open;endSize=12;dashed=1;" edge="1" parent="1c" source="c_Msg" target="c_User"><mxGeometry relative="1" as="geometry"/></mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="MLD (Logique)" id="mld_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+             <root>
+                <mxCell id="0l"/>
+                <mxCell id="1l" parent="0l"/>
+                 <mxCell id="legend_mld" value="&lt;b&gt;MLD&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;" vertex="1" parent="1l">
+                    <mxGeometry x="640" y="40" width="150" height="50" as="geometry"/>
+                </mxCell>
+                 <mxCell id="t_user" value="USER (id, ...)" style="rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1l"><mxGeometry x="40" y="40" width="150" height="40" as="geometry"/></mxCell>
+                 <mxCell id="t_msg" value="CONTACT_MESSAGE (id, user_id #, ...)" style="rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1l"><mxGeometry x="40" y="200" width="250" height="40" as="geometry"/></mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="SQL Scripts" id="sql_diagram">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0s"/>
+                <mxCell id="1s" parent="0s"/>
+                <mxCell id="legend_sql" value="&lt;b&gt;Scripts SQL (MySQL/H2)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1s">
+                    <mxGeometry x="640" y="20" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="sql_code" value="&lt;pre style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;-- Table User&lt;br&gt;CREATE TABLE User (&lt;br&gt;    id BIGINT AUTO_INCREMENT PRIMARY KEY,&lt;br&gt;    username VARCHAR(255) NOT NULL,&lt;br&gt;    email VARCHAR(255) UNIQUE NOT NULL,&lt;br&gt;    password VARCHAR(255) NOT NULL,&lt;br&gt;    first_name VARCHAR(255),&lt;br&gt;    last_name VARCHAR(255),&lt;br&gt;    phone VARCHAR(20),&lt;br&gt;    role VARCHAR(50) DEFAULT 'user',&lt;br&gt;    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP&lt;br&gt;);&lt;br&gt;&lt;br&gt;-- Table Movie&lt;br&gt;CREATE TABLE Movie (&lt;br&gt;    id BIGINT AUTO_INCREMENT PRIMARY KEY,&lt;br&gt;    title VARCHAR(255) NOT NULL,&lt;br&gt;    genre VARCHAR(100),&lt;br&gt;    duration VARCHAR(50),&lt;br&gt;    price DOUBLE,&lt;br&gt;    showtime DATETIME,&lt;br&gt;    available_seats INT,&lt;br&gt;    image_url VARCHAR(500),&lt;br&gt;    video_url VARCHAR(500),&lt;br&gt;    user_id BIGINT,&lt;br&gt;    FOREIGN KEY (user_id) REFERENCES User(id)&lt;br&gt;);&lt;br&gt;&lt;br&gt;-- Table Reservation&lt;br&gt;CREATE TABLE Reservation (&lt;br&gt;    id BIGINT AUTO_INCREMENT PRIMARY KEY,&lt;br&gt;    movie_id BIGINT,&lt;br&gt;    user_id BIGINT,&lt;br&gt;    seats_booked INT,&lt;br&gt;    total_price DOUBLE,&lt;br&gt;    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,&lt;br&gt;    FOREIGN KEY (movie_id) REFERENCES Movie(id),&lt;br&gt;    FOREIGN KEY (user_id) REFERENCES User(id)&lt;br&gt;);&lt;br&gt;&lt;br&gt;-- Table Comment&lt;br&gt;CREATE TABLE Comment (&lt;br&gt;    id BIGINT AUTO_INCREMENT PRIMARY KEY,&lt;br&gt;    movie_id BIGINT,&lt;br&gt;    user_id BIGINT,&lt;br&gt;    content TEXT,&lt;br&gt;    rating INT CHECK (rating BETWEEN 1 AND 5),&lt;br&gt;    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,&lt;br&gt;    FOREIGN KEY (movie_id) REFERENCES Movie(id),&lt;br&gt;    FOREIGN KEY (user_id) REFERENCES User(id)&lt;br&gt;);&lt;br&gt;&lt;br&gt;-- Table ContactMessage&lt;br&gt;CREATE TABLE ContactMessage (&lt;br&gt;    id BIGINT AUTO_INCREMENT PRIMARY KEY,&lt;br&gt;    user_id BIGINT, -- Linked if logged in&lt;br&gt;    email VARCHAR(255),&lt;br&gt;    subject VARCHAR(255),&lt;br&gt;    message TEXT,&lt;br&gt;    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,&lt;br&gt;    FOREIGN KEY (user_id) REFERENCES User(id)&lt;br&gt;);&lt;/font&gt;&lt;br&gt;&lt;/pre&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#F2F2F2;" parent="1s" vertex="1">
+                    <mxGeometry x="40" y="20" width="550" height="900" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
